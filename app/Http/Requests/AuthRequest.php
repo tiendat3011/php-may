@@ -32,8 +32,8 @@ class AuthRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.required' => 'Bạn chưa nhập vào email',
-            'password.required' => 'Bạn chưa nhập vào mật khẩu'
+            'email.required' => 'You have not entered a email',
+            'password.required' => 'You have not entered a password'
         ];
     }
 }

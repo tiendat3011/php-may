@@ -18,8 +18,8 @@ class AuthenticateMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::id() == 'null'){
-            \redirect()->route('auth.admin')->with('error', 'Bạn chưa đăng nhập');
+        if(Auth::id() == null){
+          return redirect('/admin')->with('error', 'Bạn chưa đăng nhập');
         }
         return $next($request);
     }

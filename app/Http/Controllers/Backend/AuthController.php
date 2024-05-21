@@ -18,7 +18,7 @@ class AuthController extends Controller
 
     public function index()
     {
-        dd(Auth::id());
+        // dd(Auth::id());
 
         if (Auth::id() > 0) {
             return \redirect()->route('dashboard.index');
@@ -34,9 +34,9 @@ class AuthController extends Controller
         ];
 
         if (Auth::attempt($credentials)) {
-            return \redirect()->route('dashboard.index')->with('success', 'Đăng nhập thành công');
+            return \redirect()->route('dashboard.index')->with('success', 'Login success');
         }
-        return \redirect()->route('auth.admin')->with('error', 'Email hoặc mật khẩu không chính xác');
+        return \redirect()->route('auth.admin')->with('error', 'Email or password incorrect');
     }
 
     public function logout(Request $request)

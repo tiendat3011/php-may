@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\AuthenticateMiddleware;
 
 /*
