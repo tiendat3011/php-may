@@ -6,7 +6,7 @@
                         <img alt="image" class="img-circle" src="backend/img/daticon.jpg" />
                     </span>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Tiến Đạt</strong>
+                        <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ Auth::user()->name }}</strong>
                             </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
                         </span> </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -18,22 +18,19 @@
                     </ul>
                 </div>
                 <div class="logo-element">
-                    IN+
+                    Mam
                 </div>
             </li>
-            <li class="active">
-                <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Manage User</span> <span
+            <li>
+                
+                <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Manage User</span> <span
                         class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li><a href="">Manage User</a></li>
-                    <li class="active"><a href="#">Manage Admin</a></li>
-                    <li><a href="#">Dashboard v.3</a></li>
-                    <li><a href="#">Dashboard v.4</a></li>
-                    <li><a href="#">Dashboard v.5 <span
-                                class="label label-primary pull-right">NEW</span></a></li>
+                    <li><a href="{{ route('user.index') }}">Manage User<span class="label label-primary pull-right">NEW</span></a></li>
+                    <li><a href="#">Manage Admin</a></li>
                 </ul>
             </li>
-            {{-- <li>
+            <li>
                 <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
             </li>
             <li>
@@ -228,7 +225,7 @@
             </li>
             <li class="special_link">
                 <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
-            </li> --}}
+            </li>
         </ul>
     </div>
 </nav>

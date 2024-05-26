@@ -17,12 +17,22 @@ use App\Http\Middleware\AuthenticateMiddleware;
 |
 */
 
-Route::get('/', function () {
+Route::get('/123', function () {
     return view('welcome');
 });
-/* BACKEND */
-Route::get('dashboard/index', [DashboardController::class , 'index'])->name('dashboard.index')->middleware(AuthenticateMiddleware::class);
 
+/* BACKEND */
+Route::get('/', [DashboardController::class , 'index'])->name('dashboard.index')->middleware('admin');
+
+/* USER */
+Route::group(['prefix' =>'user',],function(){
+    Route::get('index', [App\Http\Controllers\Backend\UserController::class , 'index'])->name('user.index')->middleware(AuthenticateMiddleware::class);
+    Route::get('create', [App\Http\Controllers\Backend\UserController::class , 'create'])->name('user.create')->middleware(AuthenticateMiddleware::class);
+});
+
+
+// Route::get('user/update', [App\Http\Controllers\Backend\UserController::class , 'update'])->name('user.index')->middleware(AuthenticateMiddleware::class);
+// Route::get('user/delelete', [App\Http\Controllers\Backend\UserController::class , 'delelete'])->name('user.index')->middleware(AuthenticateMiddleware::class);
 
 
 Route::get('admin', [AuthController::class , 'index'])->name('auth.admin');

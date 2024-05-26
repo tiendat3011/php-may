@@ -4,9 +4,49 @@
 <script src="backend/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 <script src="backend/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-@foreach ($config['js'] as $key => $val)
+<!-- Flot -->
+<script src="backend/js/plugins/flot/jquery.flot.js"></script>
+<script src="backend/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+<script src="backend/js/plugins/flot/jquery.flot.spline.js"></script>
+<script src="backend/js/plugins/flot/jquery.flot.resize.js"></script>
+<script src="backend/js/plugins/flot/jquery.flot.pie.js"></script>
+<script src="backend/js/plugins/flot/jquery.flot.symbol.js"></script>
+<script src="backend/js/plugins/flot/jquery.flot.time.js"></script>
+
+<!-- Peity -->
+<script src="backend/js/plugins/peity/jquery.peity.min.js"></script>
+<script src="backend/js/demo/peity-demo.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="backend/js/inspinia.js"></script>
+<script src="backend/js/plugins/pace/pace.min.js"></script>
+
+<!-- jQuery UI -->
+<script src="backend/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+<!-- Jvectormap -->
+<script src="backend/js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+<script src="backend/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+
+<!-- EayPIE -->
+<script src="backend/js/plugins/easypiechart/jquery.easypiechart.js"></script>
+
+<!-- Sparkline -->
+<script src="backend/js/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+<!-- Sparkline demo data  -->
+<script src="backend/js/demo/sparkline-demo.js"></script>
+
+
+<script src="backend/js/plugins/switchery/switchery.js"></script>
+<script src="backend/library/library.js"></script>
+
+
+@if(@isset($config['js']) && is_array($config['js']))
+    @foreach ($config['js'] as $key => $val)
     {!! '<script src="' . $val . '"></script>' !!}
-@endforeach
+    @endforeach
+@endif
 
 <script>
     $(document).ready(function() {
@@ -137,15 +177,15 @@
         $.plot($("#flot-dashboard-chart"), dataset, options);
 
         var mapData = {
-            // "US": 298,
-            // "SA": 200,
-            // "DE": 220,
-            // "FR": 540,
-            // "CN": 120,
-            // "AU": 760,
-            // "BR": 550,
-            // "IN": 200,
-            "VN": 600,
+            "US": 298,
+            "SA": 200,
+            "DE": 220,
+            "FR": 540,
+            "CN": 120,
+            "AU": 760,
+            "BR": 550,
+            "IN": 200,
+            "GB": 120,
         };
 
         $('#world-map').vectorMap({

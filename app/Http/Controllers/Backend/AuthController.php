@@ -18,7 +18,7 @@ class AuthController extends Controller
 
     public function index()
     {
-        // dd(Auth::id());
+        // 
 
         if (Auth::id() > 0) {
             return \redirect()->route('dashboard.index');
