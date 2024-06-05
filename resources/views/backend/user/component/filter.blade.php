@@ -11,7 +11,7 @@
         </div>
         <div class="action">
             <div class="uk-flex uk-flex-middle">
-                <select name="user_catalogue_id" class="form-control mr10">
+                <select name="user_catalog_id" class="form-control mr10">
                     <option value="0" selected="selected">User</option>
                     <option value="1">Admin</option>
                 </select>

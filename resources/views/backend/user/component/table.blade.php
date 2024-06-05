@@ -20,7 +20,7 @@
                         <input type="checkbox" value="" id="checkAll" class="input-checkbox checkboxItem">
                     </td>
                     <td>
-                        <img alt="image" class="img-circle" src="backend/img/daticon.jpg" />
+                        <img alt="image" class="img-circle size-50" src="{{$user->image}}" />
                     </td>
                     <td>
                         {{ $user->name }}

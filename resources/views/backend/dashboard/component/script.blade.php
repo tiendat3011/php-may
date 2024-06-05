@@ -40,6 +40,10 @@
 
 <script src="backend/js/plugins/switchery/switchery.js"></script>
 <script src="backend/library/library.js"></script>
+<script src="backend/library/location.js"></script>
+<script src="backend/library/finder.js"></script>
+<script src="backend/plugin/ckfinder/ckfinder.js"></script>
+
 
 
 @if(@isset($config['js']) && is_array($config['js']))
@@ -211,3 +215,4 @@
         });
     });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>

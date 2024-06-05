@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Ajax\LocationController;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\AuthenticateMiddleware;
 
@@ -28,7 +29,15 @@ Route::get('/', [DashboardController::class , 'index'])->name('dashboard.index')
 Route::group(['prefix' =>'user',],function(){
     Route::get('index', [App\Http\Controllers\Backend\UserController::class , 'index'])->name('user.index')->middleware(AuthenticateMiddleware::class);
     Route::get('create', [App\Http\Controllers\Backend\UserController::class , 'create'])->name('user.create')->middleware(AuthenticateMiddleware::class);
+    Route::post('store', [App\Http\Controllers\Backend\UserController::class , 'store'])->name('user.store')->middleware(AuthenticateMiddleware::class);
+
 });
+
+/* AJAX */
+Route::get('/ajax/location/getLocation', [LocationController::class , 'getLocation'])->name('ajax.location.index')->middleware('admin');
+
+
+
 
 
 // Route::get('user/update', [App\Http\Controllers\Backend\UserController::class , 'update'])->name('user.index')->middleware(AuthenticateMiddleware::class);

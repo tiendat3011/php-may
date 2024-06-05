@@ -1,16 +1,21 @@
 (function(){
-    var Switch = {};
+    var HT = {};
 
     var $document = $(document)
 
-    Switch.switchchery = () => {
+    HT.switchchery = () => {
         $('.js-switch').each(function(){
             var switchery = new Switchery(this, { color: '#1AB394' });
         })
     }
 
+    HT.select2 = () => {
+        $('.setupSelect2').select2();
+    }
+
     $document.ready(function(){
-        Switch.switchchery()
+        HT.switchchery();
+        HT.select2();
     })
 
 })(jQuery);

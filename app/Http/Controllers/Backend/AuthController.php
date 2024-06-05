@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests\AuthRequest;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class AuthController extends Controller
 
     public function index()
     {
-        // 
+        //
 
         if (Auth::id() > 0) {
             return \redirect()->route('dashboard.index');
@@ -39,7 +40,7 @@ class AuthController extends Controller
         return \redirect()->route('auth.admin')->with('error', 'Email or password incorrect');
     }
 
-    public function logout(Request $request)
+    public function logout(Request $request): RedirectResponse
     {
         Auth::logout();
         $request->session()->invalidate();

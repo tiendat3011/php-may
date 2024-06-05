@@ -26,11 +26,12 @@ class User extends Authenticatable
         'province_id',
         'district_id',
         'ward_id',
-        'birthday',
+        'birthdate',
         'image',
         'description',
         'user_agent',
         'ip',
+        'user_catalog_id',
     ];
 
     /**
